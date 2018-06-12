@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StrToArrayPipe implements PipeTransform {
 
   transform(value: string, args?: any): string[] {
-    return value.split('\\n');
+    if (value != null) {
+      return value.split('\\n');
+    } else {
+      return null;
+    }
   }
 
 }
