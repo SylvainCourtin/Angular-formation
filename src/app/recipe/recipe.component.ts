@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Recipe} from './recipe.model';
+import {RecipeService} from './recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -10,7 +11,10 @@ export class RecipeComponent implements OnInit {
   @Input() recipe: Recipe;
   expanded = false;
   @Input() details = false;
-  constructor() { }
+
+  @Output() eventDelete: EventEmitter<any> = new EventEmitter();
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
@@ -18,4 +22,10 @@ export class RecipeComponent implements OnInit {
   toggleExpanded() {
     this.expanded = !this.expanded;
   }
+
+  doDelete(recipe: Recipe) {
+    this.recipeService.deleteRecipe(recipe);
+    this.eventDelete.emit(recipe);
+  }
+
 }

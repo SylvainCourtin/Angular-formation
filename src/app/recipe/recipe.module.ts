@@ -7,11 +7,13 @@ import {CustomMaterialModule} from '../custom-material/custom-material.module';
 import {RouterModule} from '@angular/router';
 import {RecipeDetailComponent} from './recipe-detail/recipe-detail.component';
 import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {OrderByPipePipe} from './order-by-pipe.pipe';
 
 @NgModule({
   declarations: [
     StrToArrayPipe,
+    OrderByPipePipe,
     RecipeComponent,
     RecipesComponent,
     RecipeDetailComponent,
@@ -21,7 +23,8 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     RouterModule,
     CustomMaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class RecipeModule { }

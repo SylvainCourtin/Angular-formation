@@ -2,3 +2,8 @@ a{
   color: azure;
   text-decoration: none;
 }
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}

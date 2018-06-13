@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Recipe} from './recipe.model';
-import {RECIPES} from './recipe.mock';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -23,5 +22,9 @@ export class RecipeService {
 
   addRecipe(recipe: Recipe) {
     this.httpClient.post(this._baseUrl, recipe).subscribe();
+  }
+
+  deleteRecipe(recipe: Recipe) {
+    this.httpClient.delete(`${this._baseUrl}/${ recipe.id }`).subscribe();
   }
 }

@@ -19,7 +19,7 @@
         </ul>
         <li>Instruction :</li>
         <ul>
-          <li *ngFor="let instruction of recipe?.instructions | strToArray" >{{ instruction }}</li>
+          <li *ngFor="let instruction of recipe?.instructions " >{{ instruction }}</li>
         </ul>
       </ul>
     </mat-card-content>
@@ -32,6 +32,7 @@
   </div>
   <div *ngIf="!details">
     <button mat-raised-button color="primary" routerLink="/recipes/{{recipe?.id}}">Show details</button>
+    <button mat-raised-button color="primary" (click)="doDelete(recipe)">Delete</button>
   </div>
 </mat-card>
 

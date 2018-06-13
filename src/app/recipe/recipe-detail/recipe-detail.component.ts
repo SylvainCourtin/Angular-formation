@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RecipeService} from '../recipe.service';
 import {Recipe} from '../recipe.model';
 import {ActivatedRoute} from '@angular/router';
+import {animate, group, keyframes, query, stagger, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-recipe-detail',

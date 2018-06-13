@@ -1,5 +1,10 @@
+<div>
+  <button>Order by name</button>
+</div>
 <div class="container">
-  <app-recipe *ngFor="let recipe of $recipes" [recipe]="recipe">
-
+  <app-recipe *ngFor="let recipe of recipes | orderByPipe"
+              [@affichage]="'in'"
+              [recipe]="recipe"
+              (eventDelete)="makeDelete($event)">
   </app-recipe>
 </div>
