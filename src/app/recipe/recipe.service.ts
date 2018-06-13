@@ -20,4 +20,8 @@ export class RecipeService {
   getRecipe(id: string): Observable<Recipe> {
     return this.httpClient.get<Recipe>(`${this._baseUrl}/${ id }`);
   }
+
+  addRecipe(recipe: Recipe) {
+    this.httpClient.post(this._baseUrl, recipe).subscribe();
+  }
 }

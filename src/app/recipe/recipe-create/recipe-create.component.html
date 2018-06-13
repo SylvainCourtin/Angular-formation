@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-card class="recipe_create_contains">
+    <mat-card-header>
+      <mat-card-title class="mat-title">Création d'une recette</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mat-body">
+      <mat-card-actions>
+        <div class="example-container">
+          <mat-form-field appearance="standard">
+            <mat-label>Nom de la recette</mat-label>
+            <input matInput placeholder="Nom de la recette" [(ngModel)]="recipe.name">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>URL de l'image</mat-label>
+            <input matInput placeholder="Url de l'image" [(ngModel)]="recipe.picture">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Description" [(ngModel)]="recipe.description"></textarea>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" (click)="toggleSend()">Confirmer</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>
